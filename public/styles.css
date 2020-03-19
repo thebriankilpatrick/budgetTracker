@@ -3,9 +3,31 @@ body {
   font-family: Arial;
 }
 
+#navbar {
+  font-family: 'Baloo 2', cursive;
+}
+
+.active {
+  color: #00e676 !important;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: #00e676 !important;
+  box-shadow: 0 1px 0 0 #00e676 !important;
+}
+
+input[type=number]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: #00e676 !important;
+  box-shadow: 0 1px 0 0 #00e676 !important;
+}
+
 button, input {
   font-size: 100%;
   font-family: Arial;
+}
+
+.card {
+  height: 200px;
 }
 
 table {
@@ -34,7 +56,6 @@ tr:nth-child(even) {
 
 .total {
   font-size: 150%;
-  text-decoration: underline;
 }
 
 .form {
@@ -45,7 +66,6 @@ tr:nth-child(even) {
 .transactions {
   text-align: left;
   max-height: 300px;
-  overflow: auto;
   width: 90%;
   margin: 0 auto;
 }

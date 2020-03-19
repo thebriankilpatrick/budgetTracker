@@ -7,38 +7,78 @@
   <meta name="theme-color" content="#317EFB">
   <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <title>Budget Tracker</title>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="total">
+
+  <nav class="green accent-3" id="navbar">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Online-Offline Budget Tracker</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="total center-align">
       <div class="total">Your total is: $<span id="total">0</span></div>
     </div>
+    <div class="row">
+      <form class="col l12">
+        <div class="row">
+          <div class="input-field col s6 m6 l6">
+            <i class="material-icons prefix">description</i>
+            <input id="icon_prefix" type="text" class="validate t-name">
+            <label for="icon_prefix">Transaction Name</label>
+          </div>
 
-    <div class="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-      <p class="error"></p>
+          <div class="input-field col s6 m6 l6">
+            <i class="material-icons prefix">attach_money</i>
+            <input id="icon_telephone" type="number" class="validate t-amount">
+            <label for="icon_telephone">Amount</label>
+          </div>
+        </div>
+        <div class="container center-align">
+          <a id="add-btn" class="waves-effect waves-light btn green accent-3 btnMargin">Deposit</a>
+          <a id="sub-btn" class="waves-effect waves-light btn green accent-3">Expense</a>
+        </div>
+      </form>
     </div>
+  </div>
 
-    <div class="transactions">
-      <table>
-        <thead>
-          <th>Transaction</th>
-          <th>Amount</th>
-        </thead>
-        <tbody id="tbody">
-          
-        </tbody>
-      </table>
+  <div class="container">
+    <div class="row">
+      <div class="col l12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Transaction History<i class="material-icons right">more_vert</i></span>
+            <p>Click to see your transaction history</p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Transactions<i class="material-icons right">close</i></span>
+            <div class="transactions">
+              <table>
+                <thead>
+                  <th>Transaction</th>
+                  <th>Amount</th>
+                </thead>
+                <tbody id="tbody">
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col l12">
+        <canvas id="myChart"></canvas>
+      </div>
     </div>
-    
-    <canvas id="myChart"></canvas>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

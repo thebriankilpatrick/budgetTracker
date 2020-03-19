@@ -79,23 +79,23 @@ function populateChart() {
 }
 
 function sendTransaction(isAdding) {
-  let nameEl = document.querySelector("#t-name");
-  let amountEl = document.querySelector("#t-amount");
+  let nameEl = $(".t-name");
+  let amountEl = $(".t-amount");
   let errorEl = document.querySelector(".form .error");
 
   // validate form
-  if (nameEl.value === "" || amountEl.value === "") {
-    errorEl.textContent = "Missing Information";
-    return;
-  }
-  else {
-    errorEl.textContent = "";
-  }
+  // if (nameEl.val() === "" || amountEl.val() === "") {
+  //   errorEl.textContent = "Missing Information";
+  //   return;
+  // }
+  // else {
+  //   errorEl.textContent = "";
+  // }
 
   // create record
   let transaction = {
-    name: nameEl.value,
-    value: amountEl.value,
+    name: nameEl.val(),
+    value: amountEl.val(),
     date: new Date().toISOString()
   };
 
