@@ -71,7 +71,7 @@ function populateChart() {
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor: "#6666ff",
+            backgroundColor: "#00e676",
             data
         }]
     }
@@ -82,15 +82,6 @@ function sendTransaction(isAdding) {
   let nameEl = $(".t-name");
   let amountEl = $(".t-amount");
   let errorEl = document.querySelector(".form .error");
-
-  // validate form
-  // if (nameEl.val() === "" || amountEl.val() === "") {
-  //   errorEl.textContent = "Missing Information";
-  //   return;
-  // }
-  // else {
-  //   errorEl.textContent = "";
-  // }
 
   // create record
   let transaction = {
