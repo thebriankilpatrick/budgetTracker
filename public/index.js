@@ -1,6 +1,11 @@
 let transactions = [];
 let myChart;
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.tooltipped');
+  var instances = M.Tooltip.init(elems);
+});
+
 fetch("/api/transaction")
   .then(response => {
     return response.json();
